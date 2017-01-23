@@ -1,0 +1,5 @@
+version: "Swift version 3.0 (swift-3.0.1-PREVIEW-1)"
+options: "7d042e5e909b94bb55618a6caaf0e01e"
+build_time: [538488863, 750178000]
+inputs:
+  "/home/ubuntu/helloswift/swift_dev/main.swift": [538481007, 0]

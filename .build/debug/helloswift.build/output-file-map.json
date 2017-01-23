@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/master.swiftdeps"
+  },
+  "/home/ubuntu/helloswift/swift_dev/main.swift": {
+    "dependencies": "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.d",
+    "object": "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swift.o",
+    "swiftmodule": "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swiftdeps"
+  }
+}

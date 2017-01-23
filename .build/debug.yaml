@@ -1,0 +1,31 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  "test": ["<helloswift.module>","<helloswift.exe>"]
+  "main": ["<helloswift.module>","<helloswift.exe>"]
+default: "main"
+commands: 
+  "<helloswift.module>":
+    tool: swift-compiler
+    executable: "/opt/swift/swift-3.0/usr/bin/swiftc"
+    module-name: "helloswift"
+    module-output-path: "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.swiftmodule"
+    inputs: []
+    outputs: ["<helloswift.module>","/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swift.o"]
+    import-paths: ["/home/ubuntu/helloswift/swift_dev/.build/debug"]
+    temps-path: "/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build"
+    objects: ["/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-module-cache-path","/home/ubuntu/helloswift/swift_dev/.build/debug/ModuleCache"]
+    sources: ["/home/ubuntu/helloswift/swift_dev/main.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<helloswift.exe>":
+    tool: shell
+    description: "Linking ./.build/debug/helloswift"
+    inputs: ["/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swift.o"]
+    outputs: ["<helloswift.exe>","/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift"]
+    args: ["/opt/swift/swift-3.0/usr/bin/swiftc","-Xlinker","-rpath=$ORIGIN","-g","-L/home/ubuntu/helloswift/swift_dev/.build/debug","-o","/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift","-emit-executable","/home/ubuntu/helloswift/swift_dev/.build/debug/helloswift.build/main.swift.o"]
+
